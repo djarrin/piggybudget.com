@@ -17,6 +17,7 @@ elixir(mix => {
     mix.sass('app.scss')
        .webpack('app.js')
        .scripts([
-           'form-requests.js'
+           'form-requests.js',
+           'page-actions.js'
        ]);
 });

@@ -16,4 +16,9 @@ class Setting extends Model
     {
         return $this->hasOne(EmailType::class);
     }
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

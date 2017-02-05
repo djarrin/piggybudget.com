@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::post('/createSettings', 'HomeController@userSettingsCreate');
+Route::post('/createIncome', 'HomeController@userIncomeCreate');

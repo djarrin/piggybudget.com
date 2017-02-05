@@ -26,4 +26,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setting()
+    {
+        return $this->hasOne(Setting::class);
+    }
+
+    public function emailType()
+    {
+        return $this->hasOne(EmailType::class);
+    }
+
+    public function financial()
+    {
+        return $this->hasOne(Financial::class);
+    }
 }

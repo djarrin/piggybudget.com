@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller;
 use App\Http\Controllers\EmailTypeController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\FinancialController;
 
 class HomeController extends Controller
 {
@@ -57,6 +58,42 @@ class HomeController extends Controller
 
         $settings->create($userInfo, $receiveEmails);
         $emailKind->create($userInfo, $emailTypes);
-        echo 'test';
+    }
+
+    public function userIncomeCreate(FinancialController $financial)
+    {
+        $userInfo = Auth::user();
+        if(isset($_POST['incomeAmount'])) {
+            $incomeAmount = $_POST['incomeAmount'];
+        } else {
+            $incomeAmount = false;
+        }
+        if(isset($_POST['payCheckTimeType'])) {
+            $payCheckTimeType = $_POST['payCheckTimeType'];
+        } else {
+            $payCheckTimeType = false;
+        }
+        if(isset($_POST['payCheckTimeDay'])) {
+            $payCheckTimeDay = $_POST['payCheckTimeDay'];
+        } else {
+            $payCheckTimeDay = false;
+        }
+        if(isset($_POST['payCheckTimeDate'])) {
+            $payCheckTimeDate = $_POST['payCheckTimeDate'];
+        } else {
+            $payCheckTimeDate = false;
+        }
+        if(isset($_POST['savingsAmount'])) {
+            $savingsAmount = $_POST['savingsAmount'];
+        } else {
+            $savingsAmount = false;
+        }
+        if(isset($_POST['ccDebtAmount'])) {
+            $ccDebtAmount = $_POST['ccDebtAmount'];
+        } else {
+            $ccDebtAmount = false;
+        }
+
+        $financial->create($userInfo, $incomeAmount, $payCheckTimeType, $payCheckTimeDay, $payCheckTimeDate, $savingsAmount, $ccDebtAmount);
     }
 }

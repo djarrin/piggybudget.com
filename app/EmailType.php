@@ -19,4 +19,9 @@ class EmailType extends Model
     {
         return $this->hasOne(Setting::class);
     }
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }
