@@ -96,4 +96,9 @@ class HomeController extends Controller
 
         $financial->create($userInfo, $incomeAmount, $payCheckTimeType, $payCheckTimeDay, $payCheckTimeDate, $savingsAmount, $ccDebtAmount);
     }
+
+    public function userExpensesCreate()
+    {
+
+    }
 }

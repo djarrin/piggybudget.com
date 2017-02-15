@@ -58,4 +58,9 @@ $( document ).ready(function() {
         });
 
     });
+
+    //Intro Expense Report
+    $('form#expenseForm').on('submit', function (e) {
+        e.preventDefault();
+    });
 });

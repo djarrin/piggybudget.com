@@ -58,6 +58,11 @@ $( document ).ready(function() {
         });
 
     });
+
+    //Intro Expense Report
+    $('form#expenseForm').on('submit', function (e) {
+        e.preventDefault();
+    });
 });
 
 $( document ).ready(function() {
@@ -66,6 +71,14 @@ $( document ).ready(function() {
         changeYear: true,
         dateFormat: 'yy-mm-dd'
     });
+
+
+});
+var expense = new Vue({
+    el: '#expenses',
+    data: {
+        expense: 'Rent'
+    }
 });
 
 //# sourceMappingURL=all.js.map
