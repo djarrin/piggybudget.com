@@ -105,47 +105,42 @@
                     <div id="income_information" class="panel-body">
                         {{ Form::open(array('action' => 'HomeController@userExpensesCreate', 'method' => 'post', 'id' => 'expenseForm')) }}
 
-                        <expenseForm> <ul id="expenses">
-
-                                <input type="text" name="expense_label_1" v-model="expense">
-                                <label for="expense-1">How much do you pay each month for your @{{ expense }}</label>
-
-                            </ul></expenseForm>
-
-                        <div class="form-group housing">
-                            {{ Form::label('rentPayment', 'How much do you pay each month for your rent or mortgage?') }}
-                            {{ Form::number('rentPayment', 'rentPayment', ['placeholder' => '0.00', 'step' => 'any']) }}
-                            {{ Form::label('rentPaymentTime', 'What day of the month is your rent or mortgage bill due?') }}
-                            {{ Form::select('rentPaymentTime', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]) }}
+                        <div class="form-group expense_group">
+                            {{ Form::label('expense_1', 'What is the label of this expense?') }}
+                            {{ Form::text('expense_1', '', ['placeholder' => 'Rent or Mortgage', 'class' => 'expense_label']) }}
+                            {{ Form::label('expense_1_payment', 'How much do you pay each month for this expense?') }}
+                            {{ Form::number('expense_1_payment', 'expense_1_payment', ['placeholder' => '0.00', 'step' => 'any', 'class' => 'expense_payment']) }}
+                            {{ Form::label('expense_1_time', 'What day of the month is your this bill due?') }}
+                            {{ Form::select('expense_1_time', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], null, ['class' => 'expense_time']) }}
                         </div>
 
-                        <div class="form-group electrical">
-                            {{ Form::label('electricalPayment', 'How much do you pay each month for your electricity?') }}
-                            {{ Form::number('electricalPayment', 'electricalPayment', ['placeholder' => '0.00', 'step' => 'any']) }}
-                            {{ Form::label('electricalPaymentTime', 'What day of the month is your electrical bill due?') }}
-                            {{ Form::select('electricalPaymentTime', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]) }}
+                        <div class="form-group expense_group">
+                            {{ Form::label('expense_2', 'What is the label of this expense?') }}
+                            {{ Form::text('expense_2', '', ['placeholder' => 'Electrical', 'class' => 'expense_label']) }}
+                            {{ Form::label('expense_2_payment', 'How much do you pay each month for this expense?') }}
+                            {{ Form::number('expense_2_payment', 'expense_2_payment', ['placeholder' => '0.00', 'step' => 'any', 'class' => 'expense_payment']) }}
+                            {{ Form::label('expense_2_time', 'What day of the month is your this bill due?') }}
+                            {{ Form::select('expense_2_time', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], null, ['class' => 'expense_time']) }}
                         </div>
 
-                        <div class="form-group electrical">
-                            {{ Form::label('electricalPayment', 'How much do you pay each month for your electricity?') }}
-                            {{ Form::number('electricalPayment', 'electricalPayment', ['placeholder' => '0.00', 'step' => 'any']) }}
-                            {{ Form::label('electricalPaymentTime', 'What day of the month is your electrical bill due?') }}
-                            {{ Form::select('electricalPaymentTime', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]) }}
+                        <div class="form-group expense_group">
+                            {{ Form::label('expense_3', 'What is the label of this expense?') }}
+                            {{ Form::text('expense_3', '', ['placeholder' => 'Entertainment', 'class' => 'expense_label']) }}
+                            {{ Form::label('expense_3_payment', 'How much do you pay each month for this expense?') }}
+                            {{ Form::number('expense_3_payment', 'expense_2_payment', ['placeholder' => '0.00', 'step' => 'any', 'class' => 'expense_payment']) }}
+                            {{ Form::label('expense_3_time', 'What day of the month is your this bill due?') }}
+                            {{ Form::select('expense_3_time', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], null, ['class' => 'expense_time']) }}
                         </div>
 
-                        <div class="form-group tv">
-                            {{ Form::label('tvPayment', 'How much do you pay each month for your television?') }}
-                            {{ Form::number('tvPayment', 'tvPayment', ['placeholder' => '0.00', 'step' => 'any']) }}
-                            {{ Form::label('tvPaymentTime', 'What day of the month is your tv bill due?') }}
-                            {{ Form::select('tvPaymentTime', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]) }}
+                        <div class="form-group expense_group">
+                            {{ Form::label('expense_4', 'What is the label of this expense?') }}
+                            {{ Form::text('expense_4', '', ['placeholder' => 'Internet', 'class' => 'expense_label']) }}
+                            {{ Form::label('expense_4_payment', 'How much do you pay each month for this expense?') }}
+                            {{ Form::number('expense_4_payment', 'expense_4_payment', ['placeholder' => '0.00', 'step' => 'any', 'class' => 'expense_payment']) }}
+                            {{ Form::label('expense_4_time', 'What day of the month is your this bill due?') }}
+                            {{ Form::select('expense_4_time', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30], null, ['class' => 'expense_time']) }}
                         </div>
 
-                        <div class="form-group internet">
-                            {{ Form::label('internetPayment', 'How much do you pay each month for your internet?') }}
-                            {{ Form::number('internetPayment', 'internetPayment', ['placeholder' => '0.00', 'step' => 'any']) }}
-                            {{ Form::label('internetPaymentTime', 'What day of the month is your internet bill due?') }}
-                            {{ Form::select('internetPaymentTime', [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]) }}
-                        </div>
 
                         {{ Form::submit('All Finished') }}
 

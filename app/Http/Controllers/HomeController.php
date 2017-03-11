@@ -99,6 +99,6 @@ class HomeController extends Controller
 
     public function userExpensesCreate()
     {
-
+        echo 'test';
     }
 }

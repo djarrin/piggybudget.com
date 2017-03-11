@@ -6,11 +6,5 @@ $( document ).ready(function() {
         dateFormat: 'yy-mm-dd'
     });
 
+});
 
-});
-var expense = new Vue({
-    el: '#expenses',
-    data: {
-        expense: 'Rent'
-    }
-});

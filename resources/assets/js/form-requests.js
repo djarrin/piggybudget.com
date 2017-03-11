@@ -62,5 +62,37 @@ $( document ).ready(function() {
     //Intro Expense Report
     $('form#expenseForm').on('submit', function (e) {
         e.preventDefault();
+        var requestVar = [];
+
+        //still needs work on collecting the data
+        // $('div.expense_group').each(function () {
+        //     var expenseLabel = $(this).children('input.expense_label').val();
+        //     var expensePayment = $(this).children('input.expense_payment').val();
+        //     var expenseTime = $(this).children('input.expense_time').val();
+        //
+        //     var expenseElement = [];
+        //     expenseElement['expenseLabel'] = expenseLabel;
+        //     expenseElement['expensePayment'] = expensePayment;
+        //     expenseElement['expenseTime'] = expenseTime;
+        //
+        //     requestVar.push(expenseElement);
+        // });
+
+        $.ajax({
+            url: '/createExpense',
+            type: 'post',
+            data: {
+                _token: $('meta[name=csrf-token]').attr('content'),
+                expenseElement: requestVar
+            },
+            success: function( data ) {
+                console.log(data);
+            },
+            error: function(errorThrown) {
+
+            }
+        });
     });
+
+
 });

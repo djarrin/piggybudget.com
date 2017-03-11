@@ -1,14 +1,20 @@
 <template>
- <ul id="expenses">
+<ul id="expenses">
 
-                                <input type="text" name="expense_label_1" v-model="expense">
-                                <label for="expense-1">How much do you pay each month for your @{{ expense }}</label>
+    <input type="text" name="expense_label_1">
+    <label>How much do you pay each month for your {{ expense }}</label>
 
-                        </ul>
+</ul>
 </template>
 
 <script>
     export default {
+        data: function()
+        		{
+        			return {
+        				expense: ''
+        			}
+        		},
         mounted() {
             console.log('Component ready.')
         }

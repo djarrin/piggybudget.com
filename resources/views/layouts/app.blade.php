@@ -86,5 +86,6 @@
     <script src="/js/app.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script src="{{ asset('/js/all.js') }}"></script>
+
 </body>
 </html>
